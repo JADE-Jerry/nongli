@@ -128,6 +128,10 @@ const char* nl_jq_text[24] = {
  * 节气计算, 返回节气在本月的日期
  */
 void nl_year_jq(int year, int* jqList) {
+    if (year < 1900 || year > 2099) {
+        return;
+    }
+
     int d = year / 4;
     int m = year % 4;
     int jr = (m == 0)? (1461 * d - 1) : (1461 * d + 365 * m); // 当年第一天的积日数
