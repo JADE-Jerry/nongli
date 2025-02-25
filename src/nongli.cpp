@@ -29,6 +29,8 @@ const int _LunarCalDic[] =
 
 /**
  * 根据当前公历月份计算每日的农历，以整形数数组返回
+ * 十进制高两位：农历月份
+ * 十进制低两位：农历日期
  */
 void nl_month_days(int year, int month, int* result){
     if (year < 1900 || year > 2099 || month < 1 || month > 12) {
@@ -125,7 +127,7 @@ const char* nl_jq_text[24] = {
 };
 
 /**
- * 节气计算, 返回节气在本月的日期
+ * 节气计算, 返回节气在本年的日期
  */
 void nl_year_jq(int year, int* jqList) {
     if (year < 1900 || year > 2099) {

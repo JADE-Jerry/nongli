@@ -6,7 +6,7 @@
 ## Features
 
 - 根据当前公历月份生成农历信息
-- 根据当前年份，计算每月节气的日子
+- 根据当前年份，计算全年节气
 
 ## Installation
 
@@ -17,7 +17,7 @@
    git clone https://github.com/JADE-Jerry/nongli.git
    ```
 2. 或者下载ZIP文件并将其解压到您的Arduino库文件夹中。
-3. 如果是使用PlatformIO开发，加入路径库里面
+3. 如果是使用PlatformIO开发，加入platformio.ini的库配置里面
    ```ini
    lib_deps = 
        https://github.com/JADE-Jerry/nongli.git
@@ -42,23 +42,25 @@
 void setup() {
     Serial.begin(115200);
 
-    int year = 2023;
-    int month = 10;
+    int year = 2025;
+    int month = 2;
     int lunarInfo[31]; // 假设一个月最多有31天
     nl_month_days(year, month, lunarInfo);
 
-    Serial.println("Lunar Info:");
+    Serial.println("Lunar Dates:");
     for (int i = 0; i < 31; i++) {
         Serial.println(lunarInfo[i]);
     }
+    // Lunar Dates: 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 201 0 0 0 
 
     int jqList[24];
     nl_year_jq(year, jqList);
 
-    Serial.println("Solar Terms:");
+    Serial.println("JieQi Dates:");
     for (int i = 0; i < 24; i++) {
         Serial.println(jqList[i]);
     }
+    // JieQi Dates: 5 20 34 49 64 79 94 110 125 141 156 172 188 203 219 235 250 266 281 296 311 326 341 355 
 }
 
 void loop() {
