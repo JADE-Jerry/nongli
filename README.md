@@ -42,20 +42,28 @@ void setup() {
     int lunarInfo[31]; // 假设一个月最多有31天
     nl_month_days(year, month, lunarInfo);
 
-    Serial.println("Lunar Dates:");
+    Serial.print("Lunar Dates: ");
     for (int i = 0; i < 31; i++) {
         Serial.println(lunarInfo[i]);
     }
+    Serial.println();
     // Lunar Dates: 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 201 0 0 0 
 
     int jqList[24];
     nl_year_jq(year, jqList);
 
-    Serial.println("JieQi Dates:");
+    Serial.print("JieQi Dates: ");
     for (int i = 0; i < 24; i++) {
         Serial.println(jqList[i]);
     }
+    Serial.println();
     // JieQi Dates: 5 20 34 49 64 79 94 110 125 141 156 172 188 203 219 235 250 266 281 296 311 326 341 355 
+
+    int tg = nl_tg(year);
+    int dz = nl_dz(year);
+    Serial.println("This year: %s%s年 %s", nl_tg_text[tg], nl_dz_text[dz], nl_sx_text[dz]);
+    Serial.println();
+    // This year: 乙巳年 蛇
 }
 
 void loop() {
@@ -64,6 +72,8 @@ void loop() {
 ```
 
 ## Releases
+### 1.0.1
+* 增加天干、地支的计算。
 ### 1.0.0
 * First release.
 
