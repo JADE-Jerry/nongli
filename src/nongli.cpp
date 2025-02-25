@@ -42,8 +42,8 @@ void nl_month_days(int year, int month, int* result){
 
     int lunarInfo = _LunarCalDic[year - 1901];
 
-    int newYearDay = lunarInfo & 0x0000001F;          // 春节公历月份
-    int newYearMonth = (lunarInfo >> 5) & 0x00000003; // 春节公历日期
+    int newYearDay = lunarInfo & 0x0000001F;          // 春节公历日期
+    int newYearMonth = (lunarInfo >> 5) & 0x00000003; // 春节公历月份
     int leapMonth = (lunarInfo >> 20) & 0x0000000F;   // 闰月
     if (newYearMonth > month) {
         // 还未到春节，需要根据前一年的日历数据计算（情况仅为一种：当前为一月份，而春节为二月份）
@@ -131,6 +131,7 @@ void nl_year_jq(int year, int* jqList) {
     if (year < 1900 || year > 2099) {
         return;
     }
+    year = year - 1900; // 计算从1900年开始的积日数
 
     int d = year / 4;
     int m = year % 4;
