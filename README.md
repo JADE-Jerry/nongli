@@ -17,6 +17,11 @@
    git clone https://github.com/JADE-Jerry/nongli.git
    ```
 2. 或者下载ZIP文件并将其解压到您的Arduino库文件夹中。
+3. 如果是使用PlatformIO开发，加入路径库里面
+   ```ini
+   lib_deps = 
+       https://github.com/JADE-Jerry/nongli.git
+   ```
 
 ## Usage
 
@@ -40,7 +45,6 @@ void setup() {
     int year = 2023;
     int month = 10;
     int lunarInfo[31]; // 假设一个月最多有31天
-
     nl_month_days(year, month, lunarInfo);
 
     Serial.println("Lunar Info:");

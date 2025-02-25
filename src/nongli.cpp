@@ -27,14 +27,15 @@ const int _LunarCalDic[] =
     0x0D5252, 0x0DAA47, 0x66B53B, 0x056D4F, 0x04AE45, 0x4A4EB9, 0x0A4D4C, 0x0D1541, 0x2D92B5            /*2091-2099*/
 };
 
-// 根据当前日期计算当前月每日农历，以整形数数组返回
+/**
+ * 根据当前公历月份计算每日的农历，以整形数数组返回
+ */
 void nl_month_days(int year, int month, int* result){
     if (year < 1900 || year > 2099 || month < 1 || month > 12) {
         return;
     }
 
     int daysofmonth[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-    int year = year + 1900;
     if (year % 4 == 0 && year % 100 != 0) {
         daysofmonth[1] = 29;
     }
