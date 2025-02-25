@@ -31,7 +31,13 @@
 #define __NONGLI_H__
 
 extern const char* nl_jq_text[24];
+extern const char* nl_tg_str[10]; // 天干
+extern const char* nl_dz_str[12]; // 地支
+extern const char* nl_sx_str[12]; // 生肖
+
 void nl_month_days(int year, int month, int* result);
 void nl_year_jq(int year, int* jqList);
+int nl_tg(int year);
+int nl_dz(int year);
 
 #endif
