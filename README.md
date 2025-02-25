@@ -1,15 +1,12 @@
 # Nongli Library
-
 这个库以函数的方式，帮助计算农历信息和节气信息。
 可以便捷使用在日历项目的农历信息生成。
 
 ## Features
-
 - 根据当前公历月份生成农历信息
 - 根据当前年份，计算全年节气
 
 ## Installation
-
 要安装此库，可以克隆仓库或下载ZIP文件并将其添加到您的Arduino库文件夹中。
 
 1. 克隆仓库：
@@ -24,7 +21,6 @@
    ```
 
 ## Usage
-
 在您的项目中使用此库，请在代码中包含头文件：
 
 ```cpp
@@ -32,7 +28,6 @@
 ```
 
 ### Example
-
 以下是如何使用此库的简单示例：
 
 ```cpp
@@ -68,12 +63,20 @@ void loop() {
 }
 ```
 
-## License
+## Releases
+### 1.0.0
+* First release.
 
+## License
 此项目使用MIT许可证授权。详情请参阅LICENSE文件。
 
 ## Author
-
-Jerry
-jerry@jade-solution.com
+Jerry<br>
+jerry@jade-solution.com<br>
 https://github.com/JADE-Jerry
+
+### ★★★库还不错，支持一下★★★
+<img src="./assets/img/buymeacoffee.jpg" width="31.1%">
+<img src="./assets/img/likeit.jpg" width="30%"><br>
+
+ Copyright © 2023-2025. All Rights Reserved.
