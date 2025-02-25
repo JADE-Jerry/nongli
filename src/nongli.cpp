@@ -40,8 +40,7 @@ void nl_month_days(int year, int month, int* result){
         daysofmonth[1] = 29;
     }
 
-
-    int lunarInfo = _LunarCalDic[year - 1];
+    int lunarInfo = _LunarCalDic[year - 1901];
 
     int newYearDay = lunarInfo & 0x0000001F;          // 春节公历月份
     int newYearMonth = (lunarInfo >> 5) & 0x00000003; // 春节公历日期
